@@ -5,7 +5,7 @@ export type CartItem = {
   price: number;
 };
 
-defineProps<{ CartItem }>();
+defineProps<CartItem>();
 </script>
 
 <template>

@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import { ref, watch, onMounted } from "vue";
-import Product from "./components/Product.vue";
+import { ref, onMounted } from "vue";
+import Product, { type Product as ProductType } from "./components/Product.vue";
 import Cart from "./components/Cart.vue";
 
-const products = ref([]);
+const products = ref<ProductType[]>([]);
 const cartItems = ref([]);
 
 const fetchProducts = async () => {

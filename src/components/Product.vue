@@ -6,12 +6,14 @@ export type ProductImage = {
   desktop: string;
 };
 
-defineProps<{
+export type Product = {
   image: ProductImage;
   name: string;
   category: string;
   price: number;
-}>();
+};
+
+defineProps<Product>();
 </script>
 
 <template>

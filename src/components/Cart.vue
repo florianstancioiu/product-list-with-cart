@@ -10,6 +10,13 @@ defineProps<{ items: CartItemType[] }>();
 <template>
   <aside>
     <div v-if="items.length">
+      <CartItem
+        v-for="item in items"
+        :key="item.name"
+        :name="item.name"
+        :amount="item.amount"
+        :price="item.price"
+      />
       <Button title="Confirm Order" />
     </div>
     <EmptyCart v-else />
