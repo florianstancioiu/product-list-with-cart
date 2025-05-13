@@ -1,4 +1,6 @@
 @import "tailwindcss";
 
-:root {
+@theme {
+  --font-red-hat: "Red Hat Text", sans-serif;
+  --color-primary-bg: #fcf8f5;
 }
