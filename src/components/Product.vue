@@ -29,7 +29,7 @@ const amount = ref<number>(0);
         :src="image.tablet"
         :alt="name + ' Logo'"
       />
-      <div class="w-full absolute bottom-[-20px] grid place-items-center">
+      <div class="w-full absolute bottom-[-1.25rem] grid place-items-center">
         <AddButton title="Add to Cart" :value="amount" />
       </div>
     </div>

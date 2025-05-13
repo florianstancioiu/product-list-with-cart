@@ -98,6 +98,7 @@ Use this section to outline areas that you want to continue focusing on in futur
 - [Fetching Data - Vue example](https://vuejs.org/examples/#fetching-data) - This showed me how to fetch data with Vue's Composition API
 - [How to import and use image in a Vue single file component?](https://stackoverflow.com/a/45116994/12159189) - This helped me include images correctly in Vue SFC
 - [Vite SVG loader](https://www.npmjs.com/package/vite-svg-loader) - This helped me include SVGs as components in Vue
+- [PX to REM | CSS Unit Converter](https://cssunitconverter.vercel.app/px-to-rem) - This helped me convert pxs to rem values
 
 ## Author
 
