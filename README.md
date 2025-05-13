@@ -14,9 +14,6 @@ This is a solution to the [Product list with cart challenge on Frontend Mentor](
   - [Continued development](#continued-development)
   - [Useful resources](#useful-resources)
 - [Author](#author)
-- [Acknowledgments](#acknowledgments)
-
-**Note: Delete this note and update the table of contents based on what sections you keep.**
 
 ## Overview
 
@@ -95,10 +92,10 @@ Use this section to outline areas that you want to continue focusing on in futur
 
 ### Useful resources
 
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
-
-**Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
+- [Official Vue Tutorial](https://vuejs.org/tutorial/#step-1) - This helped me get started with the Vue 3 composition API
+- [The picture Element](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/picture) - This helped me to understand how to use the `<picture />` element
+- [Static vs Dynamic props](https://vuejs.org/guide/components/props.html#static-vs-dynamic-props) - This helped me remind how to use dynamic props in Vue
+- [Fetching Data - Vue example](https://vuejs.org/examples/#fetching-data) - This showed me how to fetch data with Vue's Composition API
 
 ## Author
 

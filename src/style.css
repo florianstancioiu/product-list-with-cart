@@ -3,4 +3,7 @@
 @theme {
   --font-red-hat: "Red Hat Text", sans-serif;
   --color-primary-bg: #fcf8f5;
+  --color-primary: #210502;
+  --color-secondary: #c83b0e;
+  --color-border-primary: #984d38;
 }

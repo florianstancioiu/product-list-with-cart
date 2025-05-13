@@ -15,14 +15,18 @@ defineProps<{
 </script>
 
 <template>
-  <div>
-    <div>
-      <img :src="image.tablet" :alt="name + ' Logo'" />
+  <div class="mt-[1.75rem] border-primary-bg border-[0.063rem]">
+    <div class="mb-[2.75rem]">
+      <img
+        class="w-full rounded-[0.5rem]"
+        :src="image.tablet"
+        :alt="name + ' Logo'"
+      />
     </div>
     <div>
-      <p>{{ category }}</p>
-      <p>{{ name }}</p>
-      <p>${{ price }}</p>
+      <p class="font-light text-[0.875rem] mb-[0.75rem]">{{ category }}</p>
+      <p class="mb-[0.75rem] text-[1.125rem] font-normal">{{ name }}</p>
+      <p class="text-border-primary font-normal text-[1.25rem]">${{ price }}</p>
     </div>
   </div>
 </template>

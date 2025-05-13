@@ -29,7 +29,7 @@ onMounted(() => {
 <template>
   <div>
     <main>
-      <h1 class="font-bold text-4xl">Desserts</h1>
+      <h1 class="font-bold text-4xl mt-[2.063rem] mb-[2.625rem]">Desserts</h1>
       <div class="">
         <Product
           v-for="product in products"
