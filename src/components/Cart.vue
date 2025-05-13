@@ -8,8 +8,11 @@ defineProps<{ items: CartItemType[] }>();
 </script>
 
 <template>
-  <aside>
-    <div v-if="items.length">
+  <aside
+    class="bg-white mb-[1.25rem] mt-[2.25rem] rounded-[0.5rem] px-[1.5rem] pt-[1.875rem]"
+  >
+    <div v-if="items.length" class="">
+      <p>Your Cart ({{ items.length }})</p>
       <CartItem
         v-for="item in items"
         :key="item.name"

@@ -96,6 +96,8 @@ Use this section to outline areas that you want to continue focusing on in futur
 - [The picture Element](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/picture) - This helped me to understand how to use the `<picture />` element
 - [Static vs Dynamic props](https://vuejs.org/guide/components/props.html#static-vs-dynamic-props) - This helped me remind how to use dynamic props in Vue
 - [Fetching Data - Vue example](https://vuejs.org/examples/#fetching-data) - This showed me how to fetch data with Vue's Composition API
+- [How to import and use image in a Vue single file component?](https://stackoverflow.com/a/45116994/12159189) - This helped me include images correctly in Vue SFC
+- [Vite SVG loader](https://www.npmjs.com/package/vite-svg-loader) - This helped me include SVGs as components in Vue
 
 ## Author
 
