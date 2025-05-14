@@ -1,10 +1,17 @@
 <script setup lang="ts">
+import { computed } from "vue";
 import EmptyCart from "./EmptyCart.vue";
 import CartItem from "./CartItem.vue";
 import Button from "./Button.vue";
 import { type CartItem as CartItemType } from "./CartItem.vue";
 
-defineProps<{ items: CartItemType[] }>();
+const props = defineProps<{ items: CartItemType[] }>();
+
+const totalItems = computed(() => {
+  return props.items.reduce((acc, item) => {
+    return (acc = acc + item.amount);
+  }, 0);
+});
 </script>
 
 <template>
@@ -12,7 +19,7 @@ defineProps<{ items: CartItemType[] }>();
     class="bg-white mb-[1.25rem] mt-[2.25rem] rounded-[0.5rem] px-[1.5rem] pt-[1.875rem]"
   >
     <div v-if="items.length" class="">
-      <p>Your Cart ({{ items.length }})</p>
+      <p>Your Cart ({{ totalItems }})</p>
       <CartItem
         v-for="item in items"
         :key="item.name"

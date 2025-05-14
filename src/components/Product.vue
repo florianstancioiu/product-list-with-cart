@@ -16,21 +16,44 @@ export type Product = {
   price: number;
 };
 
-defineProps<Product>();
+const props = defineProps<Product>();
+
+const emit = defineEmits(["updateCartItems"]);
 
 const amount = ref<number>(0);
+
+const incrementAmount = () => {
+  amount.value++;
+  emit("updateCartItems", { ...props, amount: amount.value });
+};
+
+const decrementAmount = () => {
+  if (amount.value > 0) {
+    amount.value--;
+    emit("updateCartItems", { ...props, amount: amount.value });
+  }
+};
 </script>
 
 <template>
   <div class="mt-[1.75rem]">
-    <div class="relative mb-[2.75rem] border-primary-bg border-[0.125rem]">
+    <div
+      :class="`${
+        amount > 0 ? 'border-border-primary' : 'border-primary-bg'
+      } relative mb-[2.75rem]  border-[0.125rem] rounded-[0.5rem]`"
+    >
       <img
         class="w-full rounded-[0.5rem]"
         :src="image.tablet"
         :alt="name + ' Logo'"
       />
       <div class="w-full absolute bottom-[-1.25rem] grid place-items-center">
-        <AddButton title="Add to Cart" :value="amount" />
+        <AddButton
+          @increment="incrementAmount"
+          @decrement="decrementAmount"
+          title="Add to Cart"
+          :value="amount"
+        />
       </div>
     </div>
     <div>

@@ -3,8 +3,10 @@ import { ref, onMounted } from "vue";
 import Product, { type Product as ProductType } from "./components/Product.vue";
 import Cart from "./components/Cart.vue";
 
+export type CartItem = ProductType & { amount: number };
+
 const products = ref<ProductType[]>([]);
-const cartItems = ref([]);
+const cartItems = ref<CartItem[]>([]);
 
 const fetchProducts = async () => {
   try {
@@ -18,6 +20,23 @@ const fetchProducts = async () => {
     products.value = json;
   } catch (e) {
     console.error(e);
+  }
+};
+const updateCartItems = (product: CartItem) => {
+  if (
+    cartItems.value.find((item) => item.name === product.name) === undefined
+  ) {
+    cartItems.value.push(product);
+  } else {
+    if (product.amount === 0) {
+      cartItems.value = cartItems.value.filter(
+        (item) => item.name !== product.name
+      );
+    } else if (product.amount > 0) {
+      cartItems.value = cartItems.value.map((item) =>
+        item.name === product.name ? product : item
+      );
+    }
   }
 };
 
@@ -38,6 +57,7 @@ onMounted(() => {
           :image="product.image"
           :category="product.category"
           :price="product.price"
+          @update-cart-items="updateCartItems"
         />
       </div>
     </main>
