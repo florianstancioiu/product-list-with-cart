@@ -31,7 +31,6 @@ const {
           :image="item.image"
           :amount="item.amount"
           :price="item.price"
-          @remove-cart-item="(name: string) => emit('removeCartItem', name)"
         />
       </div>
       <div class="mb-[1.25rem] pt-[1.25rem] flex justify-between items-center">

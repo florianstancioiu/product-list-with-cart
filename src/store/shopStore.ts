@@ -1,11 +1,9 @@
 import { defineStore } from "pinia";
 import { type Product } from "../components/Product.vue";
 
-export type CartProduct = Product & { amount: number };
-
 export type Store = {
   products: Product[];
-  cartItems: CartProduct[];
+  cartItems: Product[];
 };
 
 export const useShopStore = defineStore("shop", {
@@ -21,7 +19,33 @@ export const useShopStore = defineStore("shop", {
       }, 0),
   },
   actions: {
-    updateCartItems(product: CartProduct) {
+    incrementAmount(name: string) {
+      this.products = this.products.map((product) =>
+        product.name === name
+          ? { ...product, amount: ++product.amount }
+          : product
+      );
+    },
+    decrementAmount(name: string) {
+      const product = this.products.find((item) => item.name === name);
+
+      if (product && product.amount > 0) {
+        this.products = this.products.map((product) =>
+          product.name === name
+            ? { ...product, amount: --product.amount }
+            : product
+        );
+      }
+    },
+    updateCartItems(name: string) {
+      const product = this.products.find(
+        (productItem) => productItem.name === name
+      );
+
+      if (!product) {
+        return;
+      }
+
       if (
         this.cartItems.find((item) => item.name === product.name) === undefined
       ) {
@@ -38,9 +62,11 @@ export const useShopStore = defineStore("shop", {
         }
       }
     },
-
     removeCartItem(name: string) {
       this.cartItems = this.cartItems.filter((item) => item.name !== name);
+      this.products = this.products.map((product) =>
+        product.name === name ? { ...product, amount: 0 } : product
+      );
     },
     async fetchProducts() {
       try {

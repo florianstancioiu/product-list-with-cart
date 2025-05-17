@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { ref } from "vue";
 import AddButton from "./AddButton.vue";
 import { useShopStore } from "../store/shopStore";
 
@@ -15,22 +14,21 @@ export type Product = {
   name: string;
   category: string;
   price: number;
+  amount: number;
 };
 
-const props = defineProps<Product>();
+defineProps<Product>();
 const shopStore = useShopStore();
-const amount = ref<number>(0);
+const { updateCartItems, incrementAmount, decrementAmount } = shopStore;
 
-const incrementAmount = () => {
-  amount.value++;
-  shopStore.updateCartItems({ ...props, amount: amount.value });
+const handleIncrement = (name: string) => {
+  incrementAmount(name);
+  updateCartItems(name);
 };
 
-const decrementAmount = () => {
-  if (amount.value > 0) {
-    amount.value--;
-    shopStore.updateCartItems({ ...props, amount: amount.value });
-  }
+const handleDecrement = (name: string) => {
+  decrementAmount(name);
+  updateCartItems(name);
 };
 </script>
 
@@ -48,8 +46,8 @@ const decrementAmount = () => {
       />
       <div class="w-full absolute bottom-[-1.25rem] grid place-items-center">
         <AddButton
-          @increment="incrementAmount"
-          @decrement="decrementAmount"
+          @increment="handleIncrement(name)"
+          @decrement="handleDecrement(name)"
           title="Add to Cart"
           :value="amount"
         />

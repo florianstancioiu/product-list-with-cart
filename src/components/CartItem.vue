@@ -1,12 +1,12 @@
 <script setup lang="ts">
 import IconRemoveItemSVG from "../svgs/icon-remove-item.svg";
 import { type Product as ProductType } from "./Product.vue";
+import { useShopStore } from "../store/shopStore";
 
-export type CartItem = ProductType & { amount: number };
+defineProps<ProductType>();
 
-defineProps<CartItem>();
-
-const emit = defineEmits(["removeCartItem"]);
+const shopStore = useShopStore();
+const { removeCartItem } = shopStore;
 </script>
 
 <template>
@@ -29,7 +29,7 @@ const emit = defineEmits(["removeCartItem"]);
     </div>
     <div>
       <div
-        @click="() => emit('removeCartItem', name)"
+        @click="removeCartItem(name)"
         class="border-grey border-[0.125rem] rounded-full p-[0.125rem] h-[1.125rem] w-[1.125rem] grid place-items-center cursor-pointer"
       >
         <IconRemoveItemSVG class="text-grey" />

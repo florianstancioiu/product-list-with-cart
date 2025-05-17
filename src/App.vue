@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { onMounted } from "vue";
 import Product from "./components/Product.vue";
 import Cart from "./components/Cart.vue";
 import { useShopStore } from "./store/shopStore";
@@ -6,6 +7,10 @@ import { storeToRefs } from "pinia";
 
 const shopStore = useShopStore();
 const { products, cartItems } = storeToRefs(shopStore);
+
+onMounted(() => {
+  shopStore.fetchProducts();
+});
 </script>
 
 <template>
@@ -20,6 +25,7 @@ const { products, cartItems } = storeToRefs(shopStore);
           :image="product.image"
           :category="product.category"
           :price="product.price"
+          :amount="product.amount"
         />
       </div>
     </main>
