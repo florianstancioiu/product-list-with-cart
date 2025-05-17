@@ -26,24 +26,16 @@ Users should be able to:
 - See an order confirmation modal when they click "Confirm Order"
 - Reset their selections when they click "Start New Order"
 - View the optimal layout for the interface depending on their device's screen size
-- See hover and focus states for all interactive elements on the page
+- See hover ~~and focus~~ states for all interactive elements on the page
 
 ### Screenshot
 
-![](./screenshot.jpg)
-
-Add a screenshot of your solution. The easiest way to do this is to use Firefox to view your project, right-click the page and select "Take a Screenshot". You can choose either a full-height screenshot or a cropped one based on how long the page is. If it's very long, it might be best to crop it.
-
-Alternatively, you can use a tool like [FireShot](https://getfireshot.com/) to take the screenshot. FireShot has a free option, so you don't need to purchase it.
-
-Then crop/optimize/edit your image however you like, add it to your project, and update the file path in the image above.
-
-**Note: Delete this note and the paragraphs above when you add your screenshot. If you prefer not to add a screenshot, feel free to remove this entire section.**
+![](./screenshot.png)
 
 ### Links
 
 - Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Live Site URL: [https://florianstancioiu.github.io/product-list-with-cart/](https://florianstancioiu.github.io/product-list-with-cart/)
 
 ## My process
 
@@ -55,50 +47,30 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 - CSS Grid
 - Mobile-first workflow
 - [Vue](https://vuejs.org/) - JS library
-- [TailwindCSS](https://tailwindcss.com/) - For styling
+- [Pinia](https://pinia.vuejs.org/) - Global state manager library for Vue
 - [TypeScript](https://www.typescriptlang.org/) - JavaScript superset - it adds types to variables
+- [TailwindCSS](https://tailwindcss.com/) - For styling
 
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
-
-To see how you can add code snippets, see below:
-
-```html
-<h1>Some HTML code I'm proud of</h1>
-```
-
-```css
-.proud-of-this-css {
-  color: papayawhip;
-}
-```
-
-```js
-const proudOfThisFunc = () => {
-  console.log("🎉");
-};
-```
-
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
-
-**Note: Delete this note and the content within this section and replace with your own learnings.**
+- I learned (a lot) about the Composition API in Vue 3
+- I learned how to create stores (global states) for components using Pinia
+- I learned how to use the `<picture>` element
 
 ### Continued development
 
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
-
-**Note: Delete this note and the content within this section and replace with your own plans for continued development.**
+- In future projects I will reach out to implement global state using the main store library sooner because I thought out this application without it and the code turned into a mess... I still had to use Pinia because the thing that I needed to achieve was impossible without breaking best practices.
+- I will dedicate a (small) future project for focus states - I didn't implement them here either
 
 ### Useful resources
 
+- [PX to REM | CSS Unit Converter](https://cssunitconverter.vercel.app/px-to-rem) - This helped me convert pxs to rem values - highly useful website
 - [Official Vue Tutorial](https://vuejs.org/tutorial/#step-1) - This helped me get started with the Vue 3 composition API
 - [The picture Element](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/picture) - This helped me to understand how to use the `<picture />` element
 - [Static vs Dynamic props](https://vuejs.org/guide/components/props.html#static-vs-dynamic-props) - This helped me remind how to use dynamic props in Vue
 - [Fetching Data - Vue example](https://vuejs.org/examples/#fetching-data) - This showed me how to fetch data with Vue's Composition API
 - [How to import and use image in a Vue single file component?](https://stackoverflow.com/a/45116994/12159189) - This helped me include images correctly in Vue SFC
 - [Vite SVG loader](https://www.npmjs.com/package/vite-svg-loader) - This helped me include SVGs as components in Vue
-- [PX to REM | CSS Unit Converter](https://cssunitconverter.vercel.app/px-to-rem) - This helped me convert pxs to rem values
 - [Teleport](https://vuejs.org/guide/built-ins/teleport.html#teleport) - This helped me create the modal, more specifically, it helped me move the modal in the body element
 
 ## Author
