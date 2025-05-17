@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import IconRemoveItemSVG from "../svgs/icon-remove-item.svg";
-import { type Product as ProductType } from "./Product.vue";
+import { type Product } from "./Product.vue";
 import { useShopStore } from "../store/shopStore";
 
-defineProps<ProductType>();
+defineProps<Product>();
 
 const shopStore = useShopStore();
 const { removeCartItem } = shopStore;
@@ -20,10 +20,10 @@ const { removeCartItem } = shopStore;
           {{ amount }}x
         </p>
         <p class="text-grey font-normal inline-block mr-[0.625rem]">
-          @ ${{ price }}
+          @ ${{ price.toFixed(2) }}
         </p>
         <p class="text-grey-secondary font-semibold inline-block">
-          ${{ amount * price }}
+          ${{ (amount * price).toFixed(2) }}
         </p>
       </div>
     </div>

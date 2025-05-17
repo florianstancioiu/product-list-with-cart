@@ -12,11 +12,12 @@ const {
   totalCartItems,
   totalOrderPrice,
 } = storeToRefs(shopStore);
+const { showModal } = shopStore;
 </script>
 
 <template>
   <aside
-    class="bg-white mb-[1.25rem] mt-[2.25rem] rounded-[0.5rem] px-[1.5rem] pt-[1.875rem]"
+    class="bg-white pb-[1.25rem] mt-[2.25rem] rounded-[0.5rem] px-[1.5rem] pt-[1.875rem]"
   >
     <div v-if="items.length" class="">
       <p class="font-bold text-2xl mb-[2.188rem] text-border-primary">
@@ -36,7 +37,7 @@ const {
       <div class="mb-[1.25rem] pt-[1.25rem] flex justify-between items-center">
         <p class="text-[0.875rem]">Order Total</p>
         <p class="text-2xl text-primary font-semibold">
-          ${{ totalOrderPrice }}
+          ${{ totalOrderPrice.toFixed(2) }}
         </p>
       </div>
       <div
@@ -48,7 +49,7 @@ const {
         </p>
       </div>
       <div class="pb-[1.5rem]">
-        <Button title="Confirm Order" />
+        <Button @click="showModal" title="Confirm Order" />
       </div>
     </div>
     <EmptyCart v-else />

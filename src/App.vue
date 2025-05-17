@@ -10,8 +10,10 @@ const shopStore = useShopStore();
 const {
   products,
   cartItems,
+  totalOrderPrice,
   orderConfirmedModalIsOpen: modalIsOpen,
 } = storeToRefs(shopStore);
+const { hideModal, startNewOrder } = shopStore;
 
 onMounted(() => {
   shopStore.fetchProducts();
@@ -21,7 +23,7 @@ onMounted(() => {
 <template>
   <div>
     <main>
-      <h1 class="font-bold text-4xl mt-[2.063rem] mb-[2.625rem]">Desserts</h1>
+      <h1 class="font-bold text-4xl pt-[2.063rem] mb-[2.625rem]">Desserts</h1>
       <div class="">
         <Product
           v-for="product in products"
@@ -35,6 +37,12 @@ onMounted(() => {
       </div>
     </main>
     <Cart :items="cartItems" />
-    <OrderConfirmedModal :items="cartItems" :is-open="modalIsOpen" />
+    <OrderConfirmedModal
+      :items="cartItems"
+      :is-open="modalIsOpen"
+      :total-order-price="totalOrderPrice"
+      @close-modal="hideModal"
+      @new-order="startNewOrder"
+    />
   </div>
 </template>

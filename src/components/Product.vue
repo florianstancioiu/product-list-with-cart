@@ -58,7 +58,7 @@ const handleDecrement = (name: string) => {
       <p class="font-normal text-[0.875rem] mb-[0.75rem]">{{ category }}</p>
       <p class="mb-[0.75rem] text-[1.125rem] font-semibold">{{ name }}</p>
       <p class="text-border-primary font-semibold text-[1.25rem]">
-        ${{ price }}
+        ${{ price.toFixed(2) }}
       </p>
     </div>
   </div>

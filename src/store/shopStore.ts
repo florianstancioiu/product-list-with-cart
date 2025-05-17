@@ -31,6 +31,7 @@ export const useShopStore = defineStore("shop", {
     },
     showModal() {
       this.orderConfirmedModalIsOpen = true;
+      window.scrollTo({ top: 0, behavior: "smooth" });
     },
     hideModal() {
       this.orderConfirmedModalIsOpen = false;
