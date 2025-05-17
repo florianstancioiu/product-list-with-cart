@@ -34,7 +34,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
+- Solution URL: [https://www.frontendmentor.io/solutions/product-list-with-cart---vue-3-composition-api-and-typescript-G6U50Ht0e\_](https://www.frontendmentor.io/solutions/product-list-with-cart---vue-3-composition-api-and-typescript-G6U50Ht0e_)
 - Live Site URL: [https://florianstancioiu.github.io/product-list-with-cart/](https://florianstancioiu.github.io/product-list-with-cart/)
 
 ## My process
