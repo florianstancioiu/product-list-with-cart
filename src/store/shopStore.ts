@@ -4,10 +4,15 @@ import { type Product } from "../components/Product.vue";
 export type Store = {
   products: Product[];
   cartItems: Product[];
+  orderConfirmedModalIsOpen: boolean;
 };
 
 export const useShopStore = defineStore("shop", {
-  state: (): Store => ({ products: [], cartItems: [] }),
+  state: (): Store => ({
+    products: [],
+    cartItems: [],
+    orderConfirmedModalIsOpen: false,
+  }),
   getters: {
     totalCartItems: (state) =>
       state.cartItems.reduce((acc, item) => {
@@ -19,6 +24,17 @@ export const useShopStore = defineStore("shop", {
       }, 0),
   },
   actions: {
+    startNewOrder() {
+      this.orderConfirmedModalIsOpen = false;
+      this.cartItems = [];
+      this.products = this.products.map((item) => ({ ...item, amount: 0 }));
+    },
+    showModal() {
+      this.orderConfirmedModalIsOpen = true;
+    },
+    hideModal() {
+      this.orderConfirmedModalIsOpen = false;
+    },
     incrementAmount(name: string) {
       this.products = this.products.map((product) =>
         product.name === name

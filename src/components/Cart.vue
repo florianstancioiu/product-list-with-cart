@@ -2,7 +2,7 @@
 import EmptyCart from "./EmptyCart.vue";
 import IconCarbonNeutralSVG from "../svgs/icon-carbon-neutral.svg";
 import CartItem from "./CartItem.vue";
-import Button from "./Button.vue";
+import Button from "./ui/Button.vue";
 import { useShopStore } from "../store/shopStore";
 import { storeToRefs } from "pinia";
 

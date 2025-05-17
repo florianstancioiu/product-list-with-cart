@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import IconAddToCartSVG from "../svgs/icon-add-to-cart.svg";
-import IconIncrementSVG from "../svgs/icon-increment-quantity.svg";
-import IconDecrementSVG from "../svgs/icon-decrement-quantity.svg";
+import IconAddToCartSVG from "../../svgs/icon-add-to-cart.svg";
+import IconIncrementSVG from "../../svgs/icon-increment-quantity.svg";
+import IconDecrementSVG from "../../svgs/icon-decrement-quantity.svg";
 
 defineProps<{ title: string; value: number }>();
 

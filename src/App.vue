@@ -2,11 +2,16 @@
 import { onMounted } from "vue";
 import Product from "./components/Product.vue";
 import Cart from "./components/Cart.vue";
+import { default as OrderConfirmedModal } from "./components/modals/OrderConfirmed.vue";
 import { useShopStore } from "./store/shopStore";
 import { storeToRefs } from "pinia";
 
 const shopStore = useShopStore();
-const { products, cartItems } = storeToRefs(shopStore);
+const {
+  products,
+  cartItems,
+  orderConfirmedModalIsOpen: modalIsOpen,
+} = storeToRefs(shopStore);
 
 onMounted(() => {
   shopStore.fetchProducts();
@@ -30,5 +35,6 @@ onMounted(() => {
       </div>
     </main>
     <Cart :items="cartItems" />
+    <OrderConfirmedModal :items="cartItems" :is-open="modalIsOpen" />
   </div>
 </template>

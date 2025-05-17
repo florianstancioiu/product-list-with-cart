@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import AddButton from "./AddButton.vue";
+import AddButton from "./ui/AddButton.vue";
 import { useShopStore } from "../store/shopStore";
 
 export type ProductImage = {
@@ -18,6 +18,7 @@ export type Product = {
 };
 
 defineProps<Product>();
+
 const shopStore = useShopStore();
 const { updateCartItems, incrementAmount, decrementAmount } = shopStore;
 
