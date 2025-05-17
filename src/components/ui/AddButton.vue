@@ -30,7 +30,7 @@ const emit = defineEmits(["increment", "decrement"]);
   <div
     @click="emit('increment')"
     v-else
-    class="bg-white w-[10rem] h-[2.5rem] inline-flex justify-center items-center rounded-full border-[0.063rem] border-border-primary cursor-pointer select-none text-primary gap-[0.625rem]"
+    class="hover:text-border-primary bg-white w-[10rem] h-[2.5rem] inline-flex justify-center items-center rounded-full border-[0.063rem] border-border-primary cursor-pointer select-none text-primary gap-[0.625rem]"
   >
     <IconAddToCartSVG />
     <span class="font-semibold">Add to Cart</span>

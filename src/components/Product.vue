@@ -40,11 +40,28 @@ const handleDecrement = (name: string) => {
         amount > 0 ? 'border-border-primary' : 'border-primary-bg'
       } relative mb-[2.75rem]  border-[0.125rem] rounded-[0.5rem]`"
     >
-      <img
-        class="w-full rounded-[0.5rem]"
-        :src="image.tablet"
-        :alt="name + ' Logo'"
-      />
+      <picture>
+        <source
+          class="w-full rounded-[0.5rem]"
+          :srcset="image.mobile"
+          media="(min-width: 48rem)"
+        />
+        <source
+          class="w-full rounded-[0.5rem]"
+          :srcset="image.tablet"
+          media="(min-width: 64rem)"
+        />
+        <source
+          class="w-full rounded-[0.5rem]"
+          :srcset="image.desktop"
+          media="(min-width: 80rem)"
+        />
+        <img
+          class="w-full rounded-[0.5rem]"
+          :src="image.tablet"
+          :alt="name + ' Logo'"
+        />
+      </picture>
       <div class="w-full absolute bottom-[-1.25rem] grid place-items-center">
         <AddButton
           @increment="handleIncrement(name)"
