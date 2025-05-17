@@ -34,7 +34,7 @@ const handleDecrement = (name: string) => {
 </script>
 
 <template>
-  <div class="mt-[1.75rem]">
+  <div class="mt-[1.75rem] fm:mt-0">
     <div
       :class="`${
         amount > 0 ? 'border-border-primary' : 'border-primary-bg'

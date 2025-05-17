@@ -17,7 +17,7 @@ const { showModal } = shopStore;
 
 <template>
   <aside
-    class="bg-white pb-[1.25rem] mt-[2.25rem] rounded-[0.5rem] px-[1.5rem] pt-[1.875rem]"
+    class="bg-white pb-[1.25rem] mt-[2.25rem] rounded-[0.5rem] px-[1.5rem] pt-[1.875rem] fm:w-[24rem]"
   >
     <div v-if="items.length" class="">
       <p class="font-bold text-2xl mb-[2.188rem] text-border-primary">

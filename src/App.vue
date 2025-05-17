@@ -21,10 +21,12 @@ onMounted(() => {
 </script>
 
 <template>
-  <div>
-    <main>
+  <div
+    class="fm:flex fm:justify-between fm:gap-[2rem] fm:align-top fm:w-[76rem] fm:mx-auto fm:items-start"
+  >
+    <main class="fm:w-[50rem]">
       <h1 class="font-bold text-4xl pt-[2.063rem] mb-[2.625rem]">Desserts</h1>
-      <div class="">
+      <div class="fm:grid fm:grid-cols-3 fm:gap-[1.375rem]">
         <Product
           v-for="product in products"
           :key="product.name"
@@ -36,7 +38,7 @@ onMounted(() => {
         />
       </div>
     </main>
-    <Cart :items="cartItems" />
+    <Cart />
     <OrderConfirmedModal
       :items="cartItems"
       :is-open="modalIsOpen"
