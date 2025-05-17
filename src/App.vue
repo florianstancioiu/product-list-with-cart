@@ -1,9 +1,8 @@
 <script setup lang="ts">
 import { ref, onMounted } from "vue";
 import Product, { type Product as ProductType } from "./components/Product.vue";
+import { type CartItem } from "./components/CartItem.vue";
 import Cart from "./components/Cart.vue";
-
-export type CartItem = ProductType & { amount: number };
 
 const products = ref<ProductType[]>([]);
 const cartItems = ref<CartItem[]>([]);
@@ -40,6 +39,10 @@ const updateCartItems = (product: CartItem) => {
   }
 };
 
+const removeCartItem = (name: string) => {
+  cartItems.value = cartItems.value.filter((item) => item.name !== name);
+};
+
 onMounted(() => {
   fetchProducts();
 });
@@ -61,6 +64,6 @@ onMounted(() => {
         />
       </div>
     </main>
-    <Cart :items="cartItems" />
+    <Cart :items="cartItems" @remove-cart-item="removeCartItem" />
   </div>
 </template>
