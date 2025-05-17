@@ -11,17 +11,20 @@ const emit = defineEmits(["closeModal", "newOrder"]);
 
 <template>
   <Teleport to="body">
-    <div v-if="isOpen" class="absolute top-0 left-0 w-full h-full">
+    <div
+      v-if="isOpen"
+      class="absolute top-0 left-0 w-full h-full fm:grid fm:place-items-center"
+    >
       <div
         @click="() => emit('closeModal')"
-        class="absolute min-h-dvh w-full h-full bg-[rgba(116,105,101,0.5)]"
+        class="fixed min-h-dvh w-full h-full top-0 left-0 bg-[rgba(116,105,101,0.5)]"
       ></div>
       <div
-        class="relative z-10 bg-white mt-[6rem] rounded-[0.5rem] px-[1.5rem] w-full pt-[2.75rem] pb-[1.25rem] fm:w-[37rem] fm:mx-auto fm:px-[2.5rem] fm:pb-[2.5rem] fm:py-[2.75rem]"
+        class="relative z-10 bg-white mt-[6rem] rounded-[0.5rem] px-[1.5rem] w-full pt-[2.75rem] pb-[1.25rem] fm:w-[37rem] fm:mx-auto fm:px-[2.5rem] fm:pb-[2.5rem] fm:py-[2.75rem] fm:mt-0"
       >
         <IconOrderConfirmedSVG />
         <p class="font-bold text-4xl pt-[2.063rem] mb-[1.5rem]">
-          Order <br class="fn:hidden" />Confirmed
+          Order <br class="fm:hidden" />Confirmed
         </p>
         <p class="text-grey mb-[2.25rem]">We hope you enjoy your food!</p>
         <div
