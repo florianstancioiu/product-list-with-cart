@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref } from "vue";
 import AddButton from "./AddButton.vue";
+import { useShopStore } from "../store/shopStore";
 
 export type ProductImage = {
   thumbnail: string;
@@ -17,20 +18,18 @@ export type Product = {
 };
 
 const props = defineProps<Product>();
-
-const emit = defineEmits(["updateCartItems"]);
-
+const shopStore = useShopStore();
 const amount = ref<number>(0);
 
 const incrementAmount = () => {
   amount.value++;
-  emit("updateCartItems", { ...props, amount: amount.value });
+  shopStore.updateCartItems({ ...props, amount: amount.value });
 };
 
 const decrementAmount = () => {
   if (amount.value > 0) {
     amount.value--;
-    emit("updateCartItems", { ...props, amount: amount.value });
+    shopStore.updateCartItems({ ...props, amount: amount.value });
   }
 };
 </script>

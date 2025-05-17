@@ -1,24 +1,17 @@
 <script setup lang="ts">
-import { computed } from "vue";
 import EmptyCart from "./EmptyCart.vue";
 import IconCarbonNeutralSVG from "../svgs/icon-carbon-neutral.svg";
-import CartItem, { type CartItem as CartItemType } from "./CartItem.vue";
+import CartItem from "./CartItem.vue";
 import Button from "./Button.vue";
+import { useShopStore } from "../store/shopStore";
+import { storeToRefs } from "pinia";
 
-const props = defineProps<{ items: CartItemType[] }>();
-const emit = defineEmits(["removeCartItem"]);
-
-const totalItems = computed(() => {
-  return props.items.reduce((acc, item) => {
-    return (acc = acc + item.amount);
-  }, 0);
-});
-
-const orderTotal = computed(() => {
-  return props.items.reduce((acc, item) => {
-    return (acc = acc + item.amount * item.price);
-  }, 0);
-});
+const shopStore = useShopStore();
+const {
+  cartItems: items,
+  totalCartItems,
+  totalOrderPrice,
+} = storeToRefs(shopStore);
 </script>
 
 <template>
@@ -27,7 +20,7 @@ const orderTotal = computed(() => {
   >
     <div v-if="items.length" class="">
       <p class="font-bold text-2xl mb-[2.188rem] text-border-primary">
-        Your Cart ({{ totalItems }})
+        Your Cart ({{ totalCartItems }})
       </p>
       <div>
         <CartItem
@@ -43,7 +36,9 @@ const orderTotal = computed(() => {
       </div>
       <div class="mb-[1.25rem] pt-[1.25rem] flex justify-between items-center">
         <p class="text-[0.875rem]">Order Total</p>
-        <p class="text-2xl text-primary font-semibold">${{ orderTotal }}</p>
+        <p class="text-2xl text-primary font-semibold">
+          ${{ totalOrderPrice }}
+        </p>
       </div>
       <div
         class="rounded-[0.5rem] mb-[1.5rem] h-[3.25rem] bg-primary-bg flex justify-center items-center gap-[0.625rem]"
