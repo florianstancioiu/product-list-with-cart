@@ -77,6 +77,7 @@ Users should be able to:
 - [A guide to designing accessible, WCAG-conformant focus indicators](https://www.sarasoueidan.com/blog/focus-indicators/) - This helped me create focus states
 - [CSS container queries](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_containment/Container_queries) - MDN article about container queries
 - [What are container queries?](https://tailwindcss.com/docs/responsive-design#what-are-container-queries) - How to use container queries in TailwindCSS
+- [Deep Watchers](https://vuejs.org/guide/essentials/watchers.html#deep-watchers) - This helped me scroll to top when the modal is opened
 
 ## Author
 
