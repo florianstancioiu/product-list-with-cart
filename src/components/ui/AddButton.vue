@@ -13,26 +13,26 @@ const emit = defineEmits(["increment", "decrement"]);
     v-if="value > 0"
     class="bg-secondary w-[10rem] h-[2.5rem] px-[0.75rem] inline-flex justify-between items-center rounded-full border-[0.063rem] border-border-primary select-none text-primary gap-[0.625rem]"
   >
-    <div
+    <button
       @click="emit('decrement')"
       class="border-white border-[0.125rem] rounded-full p-[0.125rem] h-[1.125rem] grid place-items-center cursor-pointer"
     >
       <IconDecrementSVG />
-    </div>
+    </button>
     <p class="text-white font-semibold">{{ value }}</p>
-    <div
+    <button
       @click="emit('increment')"
       class="border-white border-[0.125rem] rounded-full p-[0.125rem] h-[1.125rem] grid place-items-center cursor-pointer"
     >
       <IconIncrementSVG />
-    </div>
+    </button>
   </div>
-  <div
+  <button
     @click="emit('increment')"
     v-else
     class="hover:text-border-primary bg-white w-[10rem] h-[2.5rem] inline-flex justify-center items-center rounded-full border-[0.063rem] border-border-primary cursor-pointer select-none text-primary gap-[0.625rem]"
   >
     <IconAddToCartSVG />
     <span class="font-semibold">Add to Cart</span>
-  </div>
+  </button>
 </template>

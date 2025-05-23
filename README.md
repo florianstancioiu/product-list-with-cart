@@ -26,7 +26,8 @@ Users should be able to:
 - See an order confirmation modal when they click "Confirm Order"
 - Reset their selections when they click "Start New Order"
 - View the optimal layout for the interface depending on their device's screen size
-- See hover ~~and focus~~ states for all interactive elements on the page
+- See hover and focus states for all interactive elements on the page
+- Use the entire page only with the keyboard by pressing `tab`, `shift + tab` and `enter` keys
 
 ### Screenshot
 
@@ -55,12 +56,13 @@ Users should be able to:
 
 - I learned (a lot) about the Composition API in Vue 3
 - I learned how to create stores (global states) for components using Pinia
-- I learned how to use the `<picture>` element
+- ~~I learned how to use the `<picture>` element~~ (I know the idea behind picture but I couldn't use it with container queries - I know it's duable but I couldn't do it myself)
+- I learned that using anchor and button tabs makes the website accessible to people using only keyboards
 
 ### Continued development
 
 - In future projects I will reach out to implement global state using the main store library sooner because I thought out this application without it and the code turned into a mess... I still had to use Pinia because the thing that I needed to achieve was impossible without breaking best practices.
-- I will dedicate a (small) future project for focus states - I didn't implement them here either
+- I will dedicate a (small) future project for focus states - ~~I didn't implement them here either~~ (There are no focus states here, I'm using the default focus styles from the browser)
 
 ### Useful resources
 
@@ -72,6 +74,9 @@ Users should be able to:
 - [How to import and use image in a Vue single file component?](https://stackoverflow.com/a/45116994/12159189) - This helped me include images correctly in Vue SFC
 - [Vite SVG loader](https://www.npmjs.com/package/vite-svg-loader) - This helped me include SVGs as components in Vue
 - [Teleport](https://vuejs.org/guide/built-ins/teleport.html#teleport) - This helped me create the modal, more specifically, it helped me move the modal in the body element
+- [A guide to designing accessible, WCAG-conformant focus indicators](https://www.sarasoueidan.com/blog/focus-indicators/) - This helped me create focus states
+- [CSS container queries](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_containment/Container_queries) - MDN article about container queries
+- [What are container queries?](https://tailwindcss.com/docs/responsive-design#what-are-container-queries) - How to use container queries in TailwindCSS
 
 ## Author
 

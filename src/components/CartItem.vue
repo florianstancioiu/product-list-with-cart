@@ -28,12 +28,12 @@ const { removeCartItem } = shopStore;
       </div>
     </div>
     <div>
-      <div
+      <button
         @click="removeCartItem(name)"
         class="border-grey border-[0.125rem] rounded-full p-[0.125rem] h-[1.125rem] w-[1.125rem] grid place-items-center cursor-pointer"
       >
         <IconRemoveItemSVG class="text-grey" />
-      </div>
+      </button>
     </div>
   </div>
 </template>

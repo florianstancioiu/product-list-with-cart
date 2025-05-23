@@ -22,10 +22,14 @@ onMounted(() => {
 
 <template>
   <div
-    class="fm:flex fm:justify-between fm:gap-[2rem] fm:align-top fm:w-[76rem] fm:mx-auto fm:items-start"
+    class="fm:flex fm:justify-between fm:gap-[2rem] fm:align-top fm:w-[76rem] fm:mx-auto fm:items-start fm:pb-[5.625rem]"
   >
     <main class="fm:w-[50rem]">
-      <h1 class="font-bold text-4xl pt-[2.063rem] mb-[2.625rem]">Desserts</h1>
+      <a
+        href="#"
+        class="inline-block font-bold text-4xl mt-[2.063rem] mb-[2.625rem]"
+        >Desserts</a
+      >
       <div class="fm:grid fm:grid-cols-3 fm:gap-[1.375rem]">
         <Product
           v-for="product in products"
