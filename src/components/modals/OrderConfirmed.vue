@@ -1,12 +1,27 @@
 <script setup lang="ts">
+import { watch } from "vue";
 import IconOrderConfirmedSVG from "../../svgs/icon-order-confirmed.svg";
 import Button from "../ui/Button.vue";
 import ModalCartItem from "../ModalCartItem.vue";
 import type { Product } from "../Product.vue";
 
-defineProps<{ isOpen: boolean; items: Product[]; totalOrderPrice: number }>();
+const { isOpen } = defineProps<{
+  isOpen: boolean;
+  items: Product[];
+  totalOrderPrice: number;
+}>();
 
 const emit = defineEmits(["closeModal", "newOrder"]);
+
+// scroll to top when the modal shows up
+watch(
+  () => isOpen,
+  (newValue) => {
+    if (newValue === true) {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  }
+);
 </script>
 
 <template>
