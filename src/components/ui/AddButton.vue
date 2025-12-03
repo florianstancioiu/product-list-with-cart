@@ -15,6 +15,7 @@ const emit = defineEmits(["increment", "decrement"]);
   >
     <button
       @click="emit('decrement')"
+      data-testid="decrement"
       class="border-white border-[0.125rem] rounded-full p-[0.125rem] h-[1.125rem] grid place-items-center cursor-pointer"
     >
       <IconDecrementSVG />
@@ -23,11 +24,13 @@ const emit = defineEmits(["increment", "decrement"]);
     <button
       @click="emit('increment')"
       class="border-white border-[0.125rem] rounded-full p-[0.125rem] h-[1.125rem] grid place-items-center cursor-pointer"
+      data-testid="increment"
     >
       <IconIncrementSVG />
     </button>
   </div>
   <button
+    data-testid="add-to-cart-btn"
     @click="emit('increment')"
     v-else
     class="hover:text-border-primary bg-white w-[10rem] h-[2.5rem] inline-flex justify-center items-center rounded-full border-[0.063rem] border-border-primary cursor-pointer select-none text-primary gap-[0.625rem]"

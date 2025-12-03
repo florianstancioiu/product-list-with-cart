@@ -17,6 +17,7 @@ const { showModal } = shopStore;
 
 <template>
   <aside
+    data-testid="cart"
     class="bg-white pb-[1.25rem] mt-[2.25rem] rounded-[0.5rem] px-[1.5rem] pt-[1.875rem] fm:w-[24rem]"
   >
     <div v-if="items.length" class="">
@@ -48,7 +49,7 @@ const { showModal } = shopStore;
           This is a <span class="font-semibold">carbon-neutral</span> delivery
         </p>
       </div>
-      <div class="pb-[1.5rem]">
+      <div data-testid="confirm-order" class="pb-[1.5rem]">
         <Button @click="showModal" title="Confirm Order" />
       </div>
     </div>

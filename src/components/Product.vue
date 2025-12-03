@@ -34,7 +34,7 @@ const handleDecrement = (name: string) => {
 </script>
 
 <template>
-  <div class="mt-[1.75rem] fm:mt-0">
+  <div data-testid="product" class="mt-[1.75rem] fm:mt-0">
     <div
       :class="`${
         amount > 0 ? 'border-border-primary' : 'border-primary-bg'
@@ -66,7 +66,12 @@ const handleDecrement = (name: string) => {
     </div>
     <div>
       <p class="font-normal text-[0.875rem] mb-[0.75rem]">{{ category }}</p>
-      <p class="mb-[0.75rem] text-[1.125rem] font-semibold">{{ name }}</p>
+      <p
+        class="mb-[0.75rem] text-[1.125rem] font-semibold"
+        data-testid="product-name"
+      >
+        {{ name }}
+      </p>
       <p class="text-border-primary font-semibold text-[1.25rem]">
         ${{ price.toFixed(2) }}
       </p>

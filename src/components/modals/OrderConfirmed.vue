@@ -35,6 +35,7 @@ watch(
         class="fixed min-h-dvh w-full h-full top-0 left-0 bg-[rgba(116,105,101,0.5)]"
       ></div>
       <div
+        data-testid="order-confirmed-modal"
         class="relative z-10 bg-white mt-[6rem] rounded-[0.5rem] px-[1.5rem] w-full pt-[2.75rem] pb-[1.25rem] fm:w-[37rem] fm:mx-auto fm:px-[2.5rem] fm:pb-[2.5rem] fm:py-[2.75rem] fm:mt-0"
       >
         <IconOrderConfirmedSVG />
